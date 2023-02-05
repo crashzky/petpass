@@ -19,6 +19,7 @@
       "@/*": ["./*"],
 	  "@pages/*": ["./pages/*"],
 	  "@shared/*": ["./shared/*"],
+	  "@hooks/*": ["./hooks/*"],
 	  "@assets/*": ["./assets/*"],
 	  "@layouts/*": ["./layouts/*"],
 	  "@components/*": ["./components/*"]

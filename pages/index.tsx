@@ -1,9 +1,15 @@
+import withCheckAuthLayout from '@/layouts/withCheckAuthLayout';
+import Router from 'next/router';
+
 const MainPage = (): JSX.Element => {
 	return (
 		<div className='text-red-500 font-bold'>
-			Hello world
+			Main page
 		</div>
 	);
 };
 
-export default MainPage;
+export default withCheckAuthLayout(MainPage, {
+	checkLoggined: true,
+	onAccessDenited: () => Router.push('/login'),
+});

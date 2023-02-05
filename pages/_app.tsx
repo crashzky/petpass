@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 import '@/styles/globals.css';
 import '@/styles/fonts.css';
+import '@/styles/fontStyles.css';
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
 	return (
