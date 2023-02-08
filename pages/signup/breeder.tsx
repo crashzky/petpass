@@ -52,9 +52,11 @@ const LoginPage = (): JSX.Element => {
 	}, [error, formik.errors, formik.submitCount]);
 
 	return (
-		<LoginLayout imageSrc='/assets/dogs/2.webp' contentClassName='self-center'>
+		<LoginLayout imageSrc='/assets/dogs/4.webp' contentClassName='self-center'>
 			<h1 className='heading-1 text-primary'>
 				Зарегистрироваться
+				<br />
+				как заводчик
 			</h1>
 			<form onSubmit={formik.handleSubmit} className='max-w-[345px] w-full grid gap-5 mt-5'>
 				<Input

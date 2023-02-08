@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 /// <reference types="cypress-localstorage-commands" />
 
-describe('Signup page', () => {
+describe('Signup owner page', () => {
 	beforeEach(() => {
 		cy.removeLocalStorage('accessToken');
 
@@ -23,8 +23,8 @@ describe('Signup page', () => {
 		});
 	});
 
-	it('signup-1: Write exist email to form', () => {
-		cy.visit('http://localhost:3000/signup');
+	it('signup-owner-1: Write exist email to form', () => {
+		cy.visit('http://localhost:3000/signup/owner');
 
 		cy.get('input[type=email]').type('exist@mail.ru');
 		cy.get('input[type=password]').type('password');
@@ -33,8 +33,8 @@ describe('Signup page', () => {
 		cy.get('p[role=alert]').should('contain.text', 'Аккаунт с таким email уже есть');
 	});
 
-	it('signup-2: Server error', () => {
-		cy.visit('http://localhost:3000/signup');
+	it('signup-owner-2: Server error', () => {
+		cy.visit('http://localhost:3000/signup/owner');
 
 		cy.get('input[type=email]').type('server@mail.ru');
 		cy.get('input[type=password]').type('password');
@@ -43,8 +43,8 @@ describe('Signup page', () => {
 		cy.get('p[role=alert]').should('contain.text', 'Что-то пошло не так. Попробуйте ещё раз позже');
 	});
 
-	it('signup-3: Write correct data to form', () => {
-		cy.visit('http://localhost:3000/signup');
+	it('signup-owner-3: Write correct data to form', () => {
+		cy.visit('http://localhost:3000/signup/owner');
 
 		cy.get('input[type=email]').type('correct@mail.ru');
 		cy.get('input[type=password]').type('password');
@@ -53,10 +53,10 @@ describe('Signup page', () => {
 		cy.url().should('contain', 'http://localhost:3000/login');
 	});
 
-	it('signup-4: Open page with accessToken', () => {
+	it('signup-owner-4: Open page with accessToken', () => {
 		cy.setLocalStorage('accessToken', 'cypressAcessToken');
 
-		cy.visit('http://localhost:3000/signup');
+		cy.visit('http://localhost:3000/signup/owner');
 
 		cy.url().should('contain', 'http://localhost:3000');
 	});
