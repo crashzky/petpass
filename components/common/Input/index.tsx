@@ -11,8 +11,8 @@ const Input: React.FC<Props> = ({ className = '', label, id, inputClassName, ...
 			<input
 				id={id}
 				className={inputClassName
-				+ ` px-5 py-4 rounded-2xl border-grey border-[1px] outline-primary w-full
-					placeholder:text-grey placeholder:font-semibold placeholder:text-sm`}
+					+ ` px-5 py-4 rounded-2xl border-grey border-[1px] outline-primary w-full
+						placeholder:text-grey placeholder:font-semibold placeholder:text-sm`}
 				{...props} />
 		</div>
 	);
