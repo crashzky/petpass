@@ -8,7 +8,7 @@ const SingupCard: React.FC<Props> = ({ className = '', imageSrc, label, link, ..
 	const router = useRouter();
 
 	return (
-		<article className={className + ' relative rounded-[34px]'} {...props}>
+		<article className={`${className} relative rounded-[34px]`} {...props}>
 			<div
 				className='absolute z-20 w-full h-full flex flex-col justify-end gap-2 rounded-[34px] p-9'
 				style={{
@@ -30,6 +30,7 @@ const SingupCard: React.FC<Props> = ({ className = '', imageSrc, label, link, ..
 			<Image
 				fill
 				alt=''
+				priority
 				aria-hidden='true'
 				className='absolute w-full h-full z-10 object-cover rounded-[34px]' 
 				src={imageSrc} />

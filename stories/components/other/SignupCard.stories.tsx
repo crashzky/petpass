@@ -4,12 +4,6 @@ import SignupCardComponent from '@components/other/SignupCard';
 export default {
 	title: 'components/other',
 	component: SignupCardComponent,
-	parameters: {
-		nextRouter: {
-			path: '#',
-			asPath: '#',
-		},	
-	},
 } as ComponentMeta<typeof SignupCardComponent>;
 
 const Template: ComponentStory<typeof SignupCardComponent> = (args) => <SignupCardComponent {...args} />;

@@ -11,7 +11,7 @@ const PetCard: React.FC<Props> = ({ className = '', imageSrc, label, description
 			role='button'
 			aria-label={`Открыть ${label} ${description}`}
 			tabIndex={0}
-			className={className + ' rounded-2xl w-[369px] h-[190px] relative cursor-pointer'}
+			className={`${className} rounded-2xl w-[369px] h-[190px] relative cursor-pointer`}
 			{...props}
 		>
 			<div
@@ -30,6 +30,7 @@ const PetCard: React.FC<Props> = ({ className = '', imageSrc, label, description
 			<Image
 				className='absolute z-10 w-full h-fill object-cover rounded-2xl'
 				src={imageSrc}
+				priority
 				fill
 				aria-hidden
 				alt='' />

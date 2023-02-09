@@ -6,7 +6,7 @@ const AddButton: React.FC<Props> = ({ className = '', variant, style = {}, label
 
 	return (
 		<button
-			className={className + ' rounded-2xl flex flex-col items-center justify-center gap-1'}
+			className={`${className} rounded-2xl flex flex-col items-center justify-center gap-1`}
 			style={{
 				...style,
 				background: border.replaceAll('\n', ' '),

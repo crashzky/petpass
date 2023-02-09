@@ -4,11 +4,11 @@ import MainLogo from '@assets/logos/mainLogo.svg';
 
 const MainLayout: React.FC<Props> = ({ className = '', contentClassName = '', children, ...props }) => {
 	return (
-		<div className={'px-[100px] pt-14 ' + className}{...props}>
+		<div className={`${className} px-[100px] pt-14`}{...props}>
 			<MainLogo className='mb-11' />
-			<main className={contentClassName}>
+			<div className={contentClassName}>
 				{children}
-			</main>
+			</div>
 		</div>
 	);
 };

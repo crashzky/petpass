@@ -4,12 +4,6 @@ import PetCardComponent from '@components/dashboard/PetCard';
 export default {
 	title: 'components/dashboard',
 	component: PetCardComponent,
-	parameters: {
-		nextRouter: {
-			path: '#',
-			asPath: '#',
-		},	
-	},
 } as ComponentMeta<typeof PetCardComponent>;
 
 const Template: ComponentStory<typeof PetCardComponent> = (args) => <PetCardComponent {...args} />;
