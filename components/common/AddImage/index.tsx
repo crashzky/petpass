@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 import Props from './AddImage.props';
 import getIcon from './AddImage.style';
@@ -8,6 +8,7 @@ import IcCross from '@assets/IcCross.svg';
 
 const AddImage: React.FC<Props> = ({ className = '', iconVariant, label, onImageChanged, ...props }) => {
 	const [file, setFile] = useState<File>();
+	const [isFocused, setIsFocused] = useState(false);
 
 	useEffect(() => onImageChanged(file), [file, onImageChanged]);
 
@@ -38,7 +39,7 @@ const AddImage: React.FC<Props> = ({ className = '', iconVariant, label, onImage
 	return (
 		<div
 			className={`${className} flex flex-col gap-1 items-center justify-center relative
-				border-lightGrey border-[1px] rounded-[10px]`}
+				border-lightGrey rounded-[10px] ${isFocused ? 'border-primary border-2' : 'border-[1px]'}`}
 			{...props}
 		>
 			<input
@@ -46,6 +47,8 @@ const AddImage: React.FC<Props> = ({ className = '', iconVariant, label, onImage
 				accept='image/*'
 				className='absolute w-full h-full cursor-pointer opacity-0'
 				aria-label={`Загрузить ${label}`}
+				onFocus={() => setIsFocused(true)}
+				onBlur={() => setIsFocused(false)}
 				onChange={(e) => setFile((e.target.files as FileList)[0])} />
 			<Icon />
 			<p className='text-primary text-center BodyText-12'>

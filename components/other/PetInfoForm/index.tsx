@@ -3,6 +3,7 @@ import Props from './PetInfoForm.props';
 
 import AddImage from '@components/common/AddImage';
 import Input from '@components/common/Input';
+import Select from '@components/common/Select';
 
 const PetInfoForm: React.FC<Props> = ({ ...props }) => {
 	const [petImage, setPetImage] = useState<File | undefined>();
@@ -27,9 +28,20 @@ const PetInfoForm: React.FC<Props> = ({ ...props }) => {
 						<Input
 							label='Дата рождения'
 							placeholder='ДД.ММ.ГГГГ' />
-						<Input
+						<Select
 							label='Пол'
-							placeholder='Самец/Самка' />
+							isSearchable={false}
+							placeholder='Самец/Самка'
+							options={[
+								{
+									label: 'Самец',
+									value: 'male',
+								},
+								{
+									label: 'Самка',
+									value: 'female',
+								},
+							]} />
 						<Input
 							label='Данные о хирургических вмешательствах'
 							placeholder='Описание'

@@ -25,7 +25,7 @@ const NewPetPage = (): JSX.Element => {
 				ariaControls='tabpanel'
 				tabs={['Данные о владельце', 'Данные о питомце']}
 				onClickTab={setSelectedTab} />
-			<main id='tabpanel' role='tabpanel' aria-labelledby='tab-0' className='mt-7'>
+			<main id='tabpanel' role='tabpanel' aria-labelledby={`tab-${selectedTab}`} className='mt-7'>
 				{selectedTab === 0 ? <OwnerInfoForm /> : <PetInfoForm />}
 				<Button className='w-[345px] my-7'>
 					Сохранить

@@ -3,6 +3,7 @@ import Props from './OwnerInfoForm.props';
 
 import AddImage from '@components/common/AddImage';
 import Input from '@components/common/Input';
+import Select from '@components/common/Select';
 
 const OwnerInfoForm: React.FC<Props> = ({ ...props }) => {
 	const [ownerImage, setOwnerImage] = useState<File | undefined>();
@@ -25,9 +26,20 @@ const OwnerInfoForm: React.FC<Props> = ({ ...props }) => {
 						<Input
 							label='Дата рождения'
 							placeholder='ДД.ММ.ГГГГ' />
-						<Input
+						<Select
 							label='Пол'
-							placeholder='Мужской/Женский' />
+							isSearchable={false}
+							placeholder='Мужской/Женский'
+							options={[
+								{
+									label: 'Мужской',
+									value: 'male',
+								},
+								{
+									label: 'Женский',
+									value: 'female',
+								},
+							]} />
 					</div>
 					<h3 className='BoldBodyText-18 mt-7'>
 						Паспортные данные
