@@ -91,7 +91,7 @@ const PetPage = (): JSX.Element => {
 		<MainLayout>
 			<Title
 				backUrl='/'
-				label='Мухтарчик' />
+				label={(formValues as IUpdatePetRequest).petName || 'Питомец'} />
 			<HorizontalMenu
 				className='mt-5'
 				defaultSelectedTab={selectedTab}
