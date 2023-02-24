@@ -1,7 +1,8 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-
+	defaultValues?: Record<string, string | number>;
+	onValuesChanged: (values: Record<string, string | number>) => void;
 };
 
 export default Props;

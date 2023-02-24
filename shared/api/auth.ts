@@ -8,4 +8,3 @@ export const signIn = (data: ISignInRequest): Promise<ISignInResponse> => {
 export const signUp = (data: ISignInRequest): Promise<ISignUpResponse> => {
 	return instance.post('/v1/signup/', data).then((res) => res.data);
 };
-
