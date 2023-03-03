@@ -48,5 +48,5 @@ const MainPage = (): JSX.Element => {
 
 export default withCheckAuthLayout(MainPage, {
 	checkLoggined: true,
-	onAccessDenited: () => Router.push('/login'),
+	onAccessDenited: () => Router.push('/hello'),
 });
