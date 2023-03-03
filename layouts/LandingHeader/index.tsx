@@ -1,11 +1,14 @@
 import Props from './LandingHeader.props';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Button from '@components/common/Button';
 import HEADER_ITEMS from './LandgingHeader.config';
 
 import MainLogo from '@assets/logos/mainLogo.svg';
 
 const LandingHeader: React.FC<Props> = ({ className = '', ...props }) => {
+	const router = useRouter();
+
 	return (
 		<header className={`${className} flex justify-between items-center px-36 py-4`} {...props}>
 			<MainLogo />
@@ -17,10 +20,14 @@ const LandingHeader: React.FC<Props> = ({ className = '', ...props }) => {
 				))}
 			</nav>
 			<div className='grid grid-cols-2 items-ceter'>
-				<Button variant='outlined' className='text-black'>
+				<Button variant='outlined' className='text-black' onClick={() => router.push('/login')}>
 					Войти
 				</Button>
-				<Button variant='primary' className='h-[50px] py-0 px-5 bg-black rounded-xl'>
+				<Button
+					variant='primary'
+					className='h-[50px] py-0 px-5 bg-black rounded-xl'
+					onClick={() => router.push('/signup')}
+				>
 					Создать аккаунт
 				</Button>
 			</div>
